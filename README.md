@@ -18,7 +18,7 @@
 
 ```
 
-
+### For Laravel Image Upload Code 
 ```php
 
 if ($request->hasFile('img')) {
