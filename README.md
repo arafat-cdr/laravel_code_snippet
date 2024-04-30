@@ -18,6 +18,75 @@
 
 ```
 
+### Some Laravel File Path Helpers
+
+```php
+<?php
+
+# use this First
+use Illuminate\Support\Facades\File;
+
+# path
+$path = public_path().'/images';
+
+# or Path
+$path = storage_path("app/public/img/");
+
+# Or Path
+$path = public_path('images/');
+
+# We can use this
+File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+
+// Or We can Use
+File::ensureDirectoryExists('/path/to/your/folder')
+
+// Or we can use
+
+if(!Storage::exists($path)){
+    Storage::makeDirectory($path);
+}
+
+// Or 
+if(!is_dir($backupLoc)) {
+
+    mkdir($backupLoc, 0755, true);
+}
+
+// or
+if (!file_exists($backupLoc)) {
+
+    mkdir($backupLoc, 0755, true);
+}
+
+// or
+if(!File::exists($backupLoc)) {
+
+    File::makeDirectory($backupLoc, 0755, true, true);
+}
+
+// or
+if(!File::exists($backupLoc)) {
+
+    Storage::makeDirectory($backupLoc, 0755, true, true);
+}
+
+// Or
+if (!file_exists($path)) {
+    // path does not exist
+}
+
+// or
+
+if(!File::exists($path)) {
+    // path does not exist
+}
+
+
+
+```
+
+
 ### For Laravel Image Upload Code 
 ```php
 
